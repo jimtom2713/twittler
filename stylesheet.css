@@ -1,0 +1,16 @@
+html {
+	background-color: #66FFCC;
+}
+.tweet-card {
+	background-color: white;
+	border-radius: 10px;
+	border: 2ppx solid black;
+	text-align: center;
+	display: float;
+	padding: 2px;
+	margin: 10px;
+}
+.timestamp {
+	font-size: 12px;
+	font-style: Helvetica;
+}

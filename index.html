@@ -3,16 +3,20 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="timeago.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
     <title>Twittler Clone</title>
   </head>
   <body>
-    <h1>Recent Tweets</h1>
+    <h1>Recent Tweets<button class="new-tweets">Get new tweets</button></h1>
+    <!-- <button class="new-tweets">Get new tweets</button> -->
+    <div class="tweet-section"></div>
+    <!-- $timestamp.text($.timeago(tweet.created_at)) -->
     <script>
 
       $(document).ready(function(){
         var $body = $('body');
-        // // $body.html('');
+        // $body.html('');
         // var index = streams.home.length - 1;
         // while(index >= 0){
         //   var tweet = streams.home[index];
@@ -21,22 +25,56 @@
         //   $tweet.appendTo($body);
         //   index -= 1;
         // }
-        console.log(streams.home);
-        for(var i=0; i<streams.home.length; i++){
-          var $tweetCard = $('<div class="tweet-card"></div>');
-          var tweet = streams.home[i];
-          var $tweet = $('<div class="tweet"></div>');
-          var $timestamp = $('<div class="timestamp"></div>')
-          $tweet.text('@'+ tweet.user + ': ' + tweet.message);
-          $timestamp.text(tweet.created_at);
-          $tweet.appendTo($tweetCard);
-          $timestamp.appendTo($tweetCard);
-          $tweetCard.appendTo($body);
-          console.log(tweet.created_at);
-        }
+        // console.log(streams.home);
+        function addTheseTweets(){
+          $('div.tweet-section').text('');
+          for(var i=0; i<streams.home.length; i++){
+            buildTweet(streams.home[i]);
+/*            var $tweetCard = $('<div class="tweet-card"></div>');
+            var tweet = streams.home[i];
+            var $tweet = $('<div class="tweet"></div>');
+            var $timestamp = $('<div class="timestamp"></div>');
+            // var $user = $();
+            // var $message = $();
+            $tweet.text('@'+ tweet.user + ': ' + tweet.message);
+            // $timestamp.text($.timeago(tweet.created_at));
+            $timestamp.text($.timeago(tweet.created_at.toISOString()));
+            $tweet.appendTo($tweetCard);
+            $timestamp.appendTo($tweetCard);
+            $tweetCard.prependTo($('.tweet-section'));*/
+            // console.log(tweet.created_at);
+          }
+        };
+        function buildTweet(obj){
+            var $tweetCard = $('<div class="tweet-card"></div>');
+            var tweet = obj;
+            var $tweet = $('<div class="tweet"></div>');
+            var $timestamp = $('<div class="timestamp"></div>');
+            // var $user = $();
+            // var $message = $();
+            $tweet.text('@'+ tweet.user + ': ' + tweet.message);
+            // $timestamp.text($.timeago(tweet.created_at));
+            $timestamp.text($.timeago(tweet.created_at.toISOString()));
+            console.log(tweet.created_at.toISOString())
+            $tweet.appendTo($tweetCard);
+            $timestamp.appendTo($tweetCard);
+            $tweetCard.prependTo($('.tweet-section'));
+        };
+        addTheseTweets();
+        $('button.new-tweets').click(addTheseTweets);
       });
+      
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
 
-     
+
     </script>
   </body>
 </html>

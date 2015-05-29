@@ -1,6 +1,12 @@
 html {
 	background-color: #66FFCC;
 }
+button {
+	margin-left:10px;
+}
+.tweet-section {
+	float: left;
+}
 .tweet-card {
 	background-color: white;
 	border-radius: 10px;

@@ -8,59 +8,19 @@
     <title>Twittler Clone</title>
   </head>
   <body>
-    <h1>Recent Tweets<button class="new-tweets">Get new tweets</button></h1>
-    <!-- <button class="new-tweets">Get new tweets</button> -->
+    <h1></h1>
+    <button class="new-tweets">Get new tweets</button>
     <div class="tweet-section"></div>
-    <!-- $timestamp.text($.timeago(tweet.created_at)) -->
     <script>
-
       $(document).ready(function(){
         var $body = $('body');
-        // $body.html('');
-        // var index = streams.home.length - 1;
-        // while(index >= 0){
-        //   var tweet = streams.home[index];
-        //   var $tweet = $('<div></div>');
-        //   $tweet.text('@' + tweet.user + ': ' + tweet.message);
-        //   $tweet.appendTo($body);
-        //   index -= 1;
-        // }
-        // console.log(streams.home);
         function addTheseTweets(){
+          $('h1').text("Who's your favorite Twitlers?!");
           $('div.tweet-section').text('');
           for(var i=0; i<streams.home.length; i++){
             buildTweet(streams.home[i]);
-/*            var $tweetCard = $('<div class="tweet-card"></div>');
-            var tweet = streams.home[i];
-            var $tweet = $('<div class="tweet"></div>');
-            var $timestamp = $('<div class="timestamp"></div>');
-            // var $user = $();
-            // var $message = $();
-            $tweet.text('@'+ tweet.user + ': ' + tweet.message);
-            // $timestamp.text($.timeago(tweet.created_at));
-            $timestamp.text($.timeago(tweet.created_at.toISOString()));
-            $tweet.appendTo($tweetCard);
-            $timestamp.appendTo($tweetCard);
-            $tweetCard.prependTo($('.tweet-section'));*/
-            // console.log(tweet.created_at);
           }
         };
-/*        function buildTweet(obj){
-            var tweet = obj;
-            var $tweetCard = $('<div class=\"tweet-card '+tweet.user+'\"></div>');
-            // var tweet = obj;
-            var $tweet = $('<div class="tweet"></div>');
-            var $timestamp = $('<div class="timestamp"></div>');
-            // var $user = $();
-            // var $message = $();
-            $tweet.text('@'+ tweet.user + ': ' + tweet.message);
-            // $timestamp.text($.timeago(tweet.created_at));
-            $timestamp.text($.timeago(tweet.created_at.toISOString()));
-            // console.log(tweet.created_at.toISOString())
-            $tweet.appendTo($tweetCard);
-            $timestamp.appendTo($tweetCard);
-            $tweetCard.prependTo($('.tweet-section'));
-        };*/
 
         function buildTweet(obj){
           var $tweetCard = $('<div class=\"tweet-card '+obj.user+'\"></div>');
@@ -76,27 +36,17 @@
           $tweetCard.prependTo($('.tweet-section'));
         };
 
-      /*  function displayUserTweets(user){
-          console.log(streams.users[user]);
-        }*/
-
         function userSpecificTweets(user){
+          $('h1').text('Tweets for ' + user);
           $('div.tweet-section').text('');
-          console.log(user);
-          // console.log(streams.users);
-          // console.log(streams.users[user]);
           for(var i=0; i<streams.users[user].length; i++){
             buildTweet(streams.users[user][i]);
           }
         }
 
-
         addTheseTweets();
         $('button.new-tweets').on('click',addTheseTweets);
-        // $('div.tweet-user').on('click', function(){console.log($(this).text())});
-        $('div.tweet-user').on('click', function(){userSpecificTweets($(this).text().slice(1))});
-        // $('div.tweet-user').on('click', userSpecificTweets($(this).text().slice(1)));
-        // function(){console.log($(this).text();)}
+        $('div').on('click','.tweet-user', function(){userSpecificTweets($(this).text().slice(1))});
       });
 
     </script>

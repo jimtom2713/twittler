@@ -8,7 +8,8 @@ button {
 	float: left;
 }
 .tweet-card {
-	background-color: white;
+	/*background-color: white;*/
+	background-color: #99FFFF;
 	border-radius: 10px;
 	border: 2ppx solid black;
 	text-align: center;
@@ -19,4 +20,21 @@ button {
 .timestamp {
 	font-size: 12px;
 	font-style: Helvetica;
+}
+.tweet-text{
+	display: inline;
+	padding: 2px;
+	margin-left: 5px;
+	margin-right:5px;
+	font-size: 14px;
+}
+.tweet-user {
+	color: #000099;
+	text-align: left;
+	margin-left: 5px;
+	font-size: 18px;
+}
+
+.tweet-user:hover {
+	color: #FF1975;
 }

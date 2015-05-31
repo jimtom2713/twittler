@@ -45,9 +45,10 @@
             // console.log(tweet.created_at);
           }
         };
-        function buildTweet(obj){
-            var $tweetCard = $('<div class="tweet-card"></div>');
+/*        function buildTweet(obj){
             var tweet = obj;
+            var $tweetCard = $('<div class=\"tweet-card '+tweet.user+'\"></div>');
+            // var tweet = obj;
             var $tweet = $('<div class="tweet"></div>');
             var $timestamp = $('<div class="timestamp"></div>');
             // var $user = $();
@@ -55,25 +56,48 @@
             $tweet.text('@'+ tweet.user + ': ' + tweet.message);
             // $timestamp.text($.timeago(tweet.created_at));
             $timestamp.text($.timeago(tweet.created_at.toISOString()));
-            console.log(tweet.created_at.toISOString())
+            // console.log(tweet.created_at.toISOString())
             $tweet.appendTo($tweetCard);
             $timestamp.appendTo($tweetCard);
             $tweetCard.prependTo($('.tweet-section'));
-        };
-        addTheseTweets();
-        $('button.new-tweets').click(addTheseTweets);
-      });
-      
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //
-      //
+        };*/
 
+        function buildTweet(obj){
+          var $tweetCard = $('<div class=\"tweet-card '+obj.user+'\"></div>');
+          var $tweetText = $('<div class=\'tweet-text\'></div>');
+          var $tweetUser = $('<div class=\'tweet-user\'></div>');
+          var $timestamp = $('<div class="timestamp"></div>');
+          $tweetUser.text('@'+obj.user);
+          $tweetText.text(obj.message);
+          $timestamp.text($.timeago(obj.created_at.toISOString()));
+          $tweetUser.appendTo($tweetCard);
+          $tweetText.appendTo($tweetCard);
+          $timestamp.appendTo($tweetCard);
+          $tweetCard.prependTo($('.tweet-section'));
+        };
+
+      /*  function displayUserTweets(user){
+          console.log(streams.users[user]);
+        }*/
+
+        function userSpecificTweets(user){
+          $('div.tweet-section').text('');
+          console.log(user);
+          // console.log(streams.users);
+          // console.log(streams.users[user]);
+          for(var i=0; i<streams.users[user].length; i++){
+            buildTweet(streams.users[user][i]);
+          }
+        }
+
+
+        addTheseTweets();
+        $('button.new-tweets').on('click',addTheseTweets);
+        // $('div.tweet-user').on('click', function(){console.log($(this).text())});
+        $('div.tweet-user').on('click', function(){userSpecificTweets($(this).text().slice(1))});
+        // $('div.tweet-user').on('click', userSpecificTweets($(this).text().slice(1)));
+        // function(){console.log($(this).text();)}
+      });
 
     </script>
   </body>

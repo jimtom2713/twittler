@@ -1,10 +1,17 @@
 html {
 	background-color: #66FFCC;
+	font-family: 'Droid Sans';
 }
 button {
 	margin-left:10px;
 }
 .tweet-section {
+	/*position: relative;*/
+	/*top: 0;*/
+	/*bottom: 0;*/
+	/*width: 1000px;*/
+	/*width: 50%;*/
+	/*overflow: scroll;*/
 	float: left;
 }
 .tweet-card {
@@ -26,6 +33,8 @@ button {
 	padding: 2px;
 	margin-left: 5px;
 	margin-right:5px;
+	margin-bottom: 10px;
+	/*padding-bottom: 10px;*/
 	font-size: 14px;
 }
 .tweet-user {

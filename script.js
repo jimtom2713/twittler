@@ -1,13 +1,14 @@
 $(document).ready(function(){
         var $body = $('body');
         // $('div.tweet-section').text('');
-        var currentTweetCounter = 0;
+        // var currentTweetCounter = 0;
+        
         function addTheseTweets(){
           // $('h1').text("Who's your favorite Twitlers?!");
-          $('div.tweet-section').text('');
-          for(var i=currentTweetCounter; i<streams.home.length; i++){
+          $('div.twitt-container').text('');
+          for(var i=0; i<streams.home.length; i++){
             buildTweet(streams.home[i]);
-            currentTweetCounter++
+            // currentTweetCounter++
             // console.log(currentTweetCounter);
           }
           // $('.timestamp').text($.timeago(obj.created_at.toISOString()));
@@ -34,11 +35,12 @@ $(document).ready(function(){
             buildTweet(streams.users[user][i]);
           }
         }
-
+/*
         function countNewTweets(){
+          console.log(currentTweetCounter);
           var newTweets = streams.home.length - currentTweetCounter + 1;
           $('.button').text(newTweets + ' new twitts');
-        }
+        }*/
 
         addTheseTweets();
         $('.button').on('click',addTheseTweets);

@@ -10,12 +10,12 @@ html, body {
 
 nav.header {
 	float: left;
-	position: fixed;
+	/*position: fixed;*/
 	top: 0;
 	left: 1%;
 	z-index: 10000;
-	width: 70%;
-	height: 15%;
+	width: 60%;
+	/*height: 15%;*/
 	text-align: left;
 	font-size: 3em;
 	background-color: #C7D0D5;

@@ -1,49 +1,90 @@
-html {
-	background-color: #66FFCC;
-	font-family: 'Droid Sans';
+html, body {
+	/*background-color: #123456;*/
+	background-color: #C7D0D5;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	font-family: 'Palatino Linotype','Book Antigua',Palatino, Serif;
+	color: #FF7148;
 }
-button {
-	margin-left:10px;
-}
-.tweet-section {
-	/*position: relative;*/
-	/*top: 0;*/
-	/*bottom: 0;*/
-	/*width: 1000px;*/
-	/*width: 50%;*/
-	/*overflow: scroll;*/
+
+nav.header {
 	float: left;
+	/*position: fixed;*/
+	top: 0;
+	left: 1%;
+	z-index: 10000;
+	width: 60%;
+	/*height: 15%;*/
+	text-align: left;
+	font-size: 3em;
+	background-color: #C7D0D5;
+	/*color: #FF7148;*/
 }
-.tweet-card {
-	/*background-color: white;*/
-	background-color: #99FFFF;
-	border-radius: 10px;
-	border: 2ppx solid black;
+
+.button {
+	float: right;
+	position: fixed;
+	top: 5%;
+	right: 5%;
+	width: 120px;
+	height: 80px;
+	font-size: 1.5em;
+	border-radius: 8px;
+	background-color: #FFFFA3;
+	/*background:#FFFFFF;*/
 	text-align: center;
-	display: float;
-	padding: 2px;
-	margin: 10px;
+}
+
+.button:hover {
+	background: #111111;
+}
+
+.twitt-container {
+	position: relative;
+	float: left;
+	width: 80%;
+	height: auto;
+	margin: 160px auto 0 auto;
+	/*z-index: 1;*/
+}
+
+.twitt-container .twitt {
+	text-align: center;
+	border-radius: 15px 50px;
+	background-color: #FFFFA3;
+	padding: 20px;
+	width: 50%;
+	height: 15%;
+	border: 1px solid #FFFFFF;
+	margin: 10px auto 20px auto;
+	color: #FC583A;
 }
 .timestamp {
 	font-size: 12px;
 	font-style: Helvetica;
+	text-align: right;
+	margin-top: 5px;
 }
-.tweet-text{
+.twitt-text{
 	display: inline;
 	padding: 2px;
 	margin-left: 5px;
 	margin-right:5px;
 	margin-bottom: 10px;
-	/*padding-bottom: 10px;*/
-	font-size: 14px;
-}
-.tweet-user {
-	color: #000099;
-	text-align: left;
-	margin-left: 5px;
+	padding-bottom: 10px;
 	font-size: 18px;
 }
+.twitt-user {
+	/*color: #000099;*/
+	text-align: left;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	font-size: 18px;
+	text-decoration: underline;
+	color: #EC583A;
+}
 
-.tweet-user:hover {
+.twitt-user:hover {
 	color: #FF1975;
 }

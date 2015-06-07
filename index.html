@@ -4,52 +4,13 @@
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
     <script src="timeago.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans">
     <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
     <title>Twittler Clone</title>
   </head>
   <body>
-    <h1></h1>
-    <button class="new-tweets">Load newest tweets</button>
-    <div class="tweet-section"></div>
-    <script>
-      $(document).ready(function(){
-        var $body = $('body');
-        function addTheseTweets(){
-          $('h1').text("Who's your favorite Twitlers?!");
-          $('div.tweet-section').text('');
-          for(var i=0; i<streams.home.length; i++){
-            buildTweet(streams.home[i]);
-          }
-        };
-
-        function buildTweet(obj){
-          var $tweetCard = $('<div class=\"tweet-card '+obj.user+'\"></div>');
-          var $tweetText = $('<div class=\'tweet-text\'></div>');
-          var $tweetUser = $('<div class=\'tweet-user\'></div>');
-          var $timestamp = $('<div class="timestamp"></div>');
-          $tweetUser.text('@'+obj.user);
-          $tweetText.text(obj.message);
-          $timestamp.text($.timeago(obj.created_at.toISOString()));
-          $tweetUser.appendTo($tweetCard);
-          $tweetText.appendTo($tweetCard);
-          $timestamp.appendTo($tweetCard);
-          $tweetCard.prependTo($('.tweet-section'));
-        };
-
-        function userSpecificTweets(user){
-          $('h1').text('Tweets for ' + user);
-          $('div.tweet-section').text('');
-          for(var i=0; i<streams.users[user].length; i++){
-            buildTweet(streams.users[user][i]);
-          }
-        }
-
-        addTheseTweets();
-        $('button.new-tweets').on('click',addTheseTweets);
-        $('div').on('click','.tweet-user', function(){userSpecificTweets($(this).text().slice(1))});
-      });
-
-    </script>
-  </body>
+    <nav class="header">Twittler</nav>
+    <div class="button">Click me for new Twitts!</div>
+    <div class="twitt-container"></div>
 </html>

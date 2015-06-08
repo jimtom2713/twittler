@@ -6,6 +6,9 @@ html, body {
 	margin: 0;
 	font-family: 'Palatino Linotype','Book Antigua',Palatino, Serif;
 	color: #FF7148;
+	background-image: url("blue.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 nav.header {
@@ -18,11 +21,11 @@ nav.header {
 	/*height: 15%;*/
 	text-align: left;
 	font-size: 3em;
-	background-color: #C7D0D5;
+	/*background-color: #C7D0D5;*/
 	/*color: #FF7148;*/
 }
 
-.button {
+div.button {
 	float: right;
 	position: fixed;
 	top: 5%;

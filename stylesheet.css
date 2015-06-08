@@ -15,7 +15,7 @@ nav.header {
 	float: left;
 	/*position: fixed;*/
 	top: 0;
-	left: 1%;
+	margin-left: 3%;
 	z-index: 10000;
 	width: 60%;
 	/*height: 15%;*/
@@ -84,7 +84,7 @@ div.button {
 	margin-left: 5px;
 	margin-bottom: 5px;
 	font-size: 18px;
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 	color: #EC583A;
 }
 
